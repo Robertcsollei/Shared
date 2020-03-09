@@ -1,0 +1,21 @@
+           foreach (Country element in CountryRepository.CountriesSorted)
+            {
+                if (!String.IsNullOrEmpty(country))
+                {
+                    if (element.CountryCode == country)
+                    {
+                        countriesDropdown.Add(new SelectListItem { Text = element.Name, Value = element.CountryCode, Selected = true });
+                    }
+                    else
+                    {
+                        countriesDropdown.Add(new SelectListItem { Text = element.Name, Value = element.CountryCode });
+                    }
+                }
+                else
+                {
+                    countriesDropdown.Add(new SelectListItem { Text = element.Name, Value = element.CountryCode });
+                }
+
+
+
+            }
